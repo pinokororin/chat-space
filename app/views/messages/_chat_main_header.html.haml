@@ -1,0 +1,28 @@
+.main-header
+  .main-header__left-box
+    %h2.main-header__left-box__current-group ガンバの大冒険
+    %ul.main-header__left-box__member-list
+      Member
+      %li.main-header__left-box__member-list__member aa
+      %li.main-header__left-box__member-list__member taro
+  .main-header__edit-btn Edit
+.messages
+  .message
+    .message__upper-info
+      %p.message__upper-info__talker taro
+      %p.message__upper-info__date 2019/11/13(Wed) 18:21:24
+      %p.message__text あああ
+  .message
+    .message__upper-info
+      %p.message__upper-info__talker taro
+      %p.message__upper-info__date 2019/11/13(Wed) 18:21:27
+      %p.message__text いいい
+.form
+  %form#new_message.new_message
+    .input-box
+      %input#message_content.input-box__text{:placeholder => "type a message"}/
+      %label.input-box__image
+        %i.fa.fa-image
+    %button.submit-btn send
+    -# {:value => "Send"}/
+    
