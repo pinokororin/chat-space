@@ -1,0 +1,32 @@
+.main-header
+  .main-header__left-box
+    %h2.main-header__left-box__current-group ガンバの大冒険
+    %ul.main-header__left-box__member-list
+      Member：
+      %li.main-header__left-box__member-list__member aa
+      %li.main-header__left-box__member-list__member taro
+  = link_to edit_group_path(group) do
+    .main-header__edit-btn Edit
+    
+.messages
+  .message
+    .message__upper-info
+      %p.message__upper-info__talker taro
+      %p.message__upper-info__date 2019/11/13(Wed) 18:21:24
+    %p.message__text あああ
+  .message
+    .message__upper-info
+      %p.message__upper-info__talker taro
+      %p.message__upper-info__date 2019/11/13(Wed) 18:21:27
+    %p.message__text いいい
+
+.form
+  = form_for [@group, @message] do |f|
+    .input-box
+      = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'  
+      = f.label :"filename", class: 'input-box__image' do
+        = fa_icon 'picture-o', class: 'icon'
+        %input#filename{:type => "file"}/
+    = f.submit 'Send', class: 'submit-btn'
+
+
