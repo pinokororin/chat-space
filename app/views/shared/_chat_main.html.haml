@@ -19,7 +19,7 @@
       = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'  
       = f.label :"filename", class: 'input-box__image' do
         = fa_icon 'picture-o', class: 'icon'
-        %input#filename{:type => "file"}/
+        %input#filename{:name => "message[image]", :type => "file"}/
     = f.submit 'Send', class: 'submit-btn'
 
 
