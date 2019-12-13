@@ -20,6 +20,7 @@ $(function(){
                   </div>`
     return html
   }
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     console.log(this)
@@ -34,13 +35,18 @@ $(function(){
       processData: false,
       contentType: false
     })
+
     .done(function(data){
-      console.log(data)
       var html = buildHTML(data);
       $('.messages').append(html);
-      $('#message_content')[0].reset();
-      $('.message').animate({ scrollTop: $('.message')[0].scrollHeight});
-      $('.form__submit').prop('disabled', false);
+      $('#new_message')[0].reset();
+      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
     })
+    .always(function() {
+      $('.submit-btn').prop('disabled', false);
+    })
+    .fail(function() {
+      alert("メッセージ送信に失敗しました");
+    });
   })
 });
