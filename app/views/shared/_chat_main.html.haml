@@ -17,9 +17,9 @@
   = form_for [@group, @message] do |f|
     .input-box
       = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'  
-      = f.label :"filename", class: 'input-box__image' do
+      = f.label :image, class: 'input-box__image' do
         = fa_icon 'picture-o', class: 'icon'
-        %input#filename{:name => "message[image]", :type => "file"}/
+        = f.file_field :image, class: 'hidden'
     = f.submit 'Send', class: 'submit-btn'
 
 
