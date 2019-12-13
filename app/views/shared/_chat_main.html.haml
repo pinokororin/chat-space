@@ -19,7 +19,7 @@
       = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'  
       = f.label :image, class: 'input-box__image' do
         = fa_icon 'picture-o', class: 'icon'
-        = f.file_field :"image", class: 'hidden'
+        = f.file_field :image, class: 'hidden'
     = f.submit 'Send', class: 'submit-btn'
 
 

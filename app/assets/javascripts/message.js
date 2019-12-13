@@ -23,10 +23,8 @@ $(function(){
 
   $('#new_message').on('submit', function(e){
     e.preventDefault();
-    console.log(this)
     var formData = new FormData(this);
     var url = $(this).attr('action')
-    console.log(url)
     $.ajax({
       url: url,
       type: "POST",
